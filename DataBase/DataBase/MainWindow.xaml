@@ -1,0 +1,32 @@
+﻿<Window x:Class="DataBase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DataBase"
+        mc:Ignorable="d"
+        Title="DataBase" Height="310" Width="655">
+    <Grid>
+        <DataGrid x:Name="db" HorizontalAlignment="Left" Height="255" Margin="200,10,0,0" VerticalAlignment="Top" Width="432">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding num}" ClipboardContentBinding="{x:Null}" Header="№"/>
+                <DataGridTextColumn Binding="{Binding name}" ClipboardContentBinding="{x:Null}" Header="Ф.И.О."/>
+                <DataGridTextColumn Binding="{Binding phys}" ClipboardContentBinding="{x:Null}" Header="Физика"/>
+                <DataGridTextColumn Binding="{Binding math}" ClipboardContentBinding="{x:Null}" Header="Матеша"/>
+            </DataGrid.Columns>
+        </DataGrid>
+        <TextBox x:Name="name" HorizontalAlignment="Left" Height="26" Margin="76,10,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="num" HorizontalAlignment="Left" Height="26" Margin="76,41,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="ph" HorizontalAlignment="Left" Height="26" Margin="76,72,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" VerticalContentAlignment="Center"/>
+        <TextBox x:Name="mth" HorizontalAlignment="Left" Height="26" Margin="76,103,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="119" VerticalContentAlignment="Center"/>
+        <Label Content="Ф.И.О." HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Height="26" Width="54" VerticalContentAlignment="Center"/>
+        <Label Content="Номер" HorizontalAlignment="Left" Margin="10,41,0,0" VerticalAlignment="Top" Width="54" Height="26" VerticalContentAlignment="Center"/>
+        <Label Content="Физика" HorizontalAlignment="Left" Margin="10,72,0,0" VerticalAlignment="Top" Height="26" Width="54" VerticalContentAlignment="Center"/>
+        <Label Content="Матеша" HorizontalAlignment="Left" Margin="10,103,0,0" VerticalAlignment="Top" Height="26" VerticalContentAlignment="Center"/>
+        <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="100" Click="Add_Click"/>
+        <Button x:Name="Red" Content="Редактировать" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Width="100" Click="Red_Click"/>
+        <Button x:Name="Del" Content="Удалить" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" Width="100" Click="Del_Click"/>
+        <Button Content="Добавить DB" HorizontalAlignment="Left" Margin="50,225,0,0" VerticalAlignment="Top" Width="100" Click="Button_Click"/>
+
+    </Grid>
+</Window>
