@@ -31,7 +31,7 @@ namespace DataBase
             public int phys { get; set; }
             public int math { get; set; }
         }
-
+        //
         public MainWindow()
         {
             InitializeComponent();
