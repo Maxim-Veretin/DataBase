@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.Data.SQLite;
+using System.IO;
 
 namespace DataBase
 {
@@ -20,11 +21,10 @@ namespace DataBase
     /// Логика взаимодействия для MainWindow.xaml
     /// </summary>
 
-
     public partial class MainWindow : Window
     {
 
-        public class DataBase
+        public class DataBase1
         {
             public int num { get; set; }
             public string name { get; set; }
@@ -35,35 +35,23 @@ namespace DataBase
         public MainWindow()
         {
             InitializeComponent();
-
         }
 
         SQLiteConnection m_dbConnection;
 
         private void Add_Click(object sender, RoutedEventArgs e)
         {
-            //Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-            //dlg.ShowDialog();
-
-            ////имя базы данных
-            //string db1 = dlg.FileName;
-
-            //SQLiteConnection m_dbConnection;
-            //m_dbConnection = new SQLiteConnection("Data Source = " + db1 + ";Version = 3");
-
-            ////открытие соединения с базой даных
-            //m_dbConnection.Open();
-
-            string sql = "INSERT INTO score,name (№, Ф.И.О., Физика, Матеша) VALUES (" + num.Text + ",'" + name.Text + ",'" + ph.Text + ",'" + mth.Text + "')";
-            //SQLiteConnection m_dbConnection;
-            //m_dbConnection = new SQLiteConnection("Data Source = " + db + ";Version = 1");
+            string sql = "INSERT INTO name,score (№, Ф.И.О., Физика, Матеша) VALUES (" + num.Text.ToString() + ",'" + name.Text.ToString() + "'," + ph.Text.ToString() + "," + mth.Text.ToString() + ")";
+            
             SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-            //SQLiteDataReader reader = command.ExecuteReader();
 
-            var data = new DataBase { num = int.Parse(num.Text.ToString()), name = name.Text.ToString(), phys = int.Parse(ph.Text.ToString()), math = int.Parse(mth.Text.ToString()) };
+            //m_dbConnection.Open();
+            //command.ExecuteNonQuery();
+
+            //m_dbConnection.Close();
+
+            var data = new DataBase1 { num = int.Parse(num.Text.ToString()), name = name.Text.ToString(), phys = int.Parse(ph.Text.ToString()), math = int.Parse(mth.Text.ToString()) };
             db.Items.Add(data);
-            /*SQLiteDataReader reader = */command.ExecuteReader();
-            m_dbConnection.Close();
         }
 
         private void Red_Click(object sender, RoutedEventArgs e)
@@ -96,11 +84,11 @@ namespace DataBase
 
             while (reader.Read())
             {
-                var data = new DataBase { num = int.Parse(reader["№"].ToString()), name = reader["Ф.И.О."].ToString(), phys = int.Parse(reader["Физика"].ToString()), math = int.Parse(reader["Матеша"].ToString()) };
+                var data = new DataBase1 { num = int.Parse(reader["№"].ToString()), name = reader["Ф.И.О."].ToString(), phys = int.Parse(reader["Физика"].ToString()), math = int.Parse(reader["Матеша"].ToString()) };
                 db.Items.Add(data);
             }
 
-            m_dbConnection.Close();
+            //m_dbConnection.Close();
         }
     }
 }
