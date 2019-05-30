@@ -26,7 +26,7 @@
         <Button x:Name="Add" Content="Добавить" HorizontalAlignment="Left" Margin="50,150,0,0" VerticalAlignment="Top" Width="100" Click="Add_Click"/>
         <Button x:Name="Red" Content="Редактировать" HorizontalAlignment="Left" Margin="50,175,0,0" VerticalAlignment="Top" Width="100" Click="Red_Click"/>
         <Button x:Name="Del" Content="Удалить" HorizontalAlignment="Left" Margin="50,200,0,0" VerticalAlignment="Top" Width="100" Click="Del_Click"/>
-        <Button x:Name="DBase" Content="Добавить DB" HorizontalAlignment="Left" Margin="50,225,0,0" VerticalAlignment="Top" Width="100" Click="Base_Click"/>
+        <!--<Button x:Name="DBase" Content="Добавить DB" HorizontalAlignment="Left" Margin="50,225,0,0" VerticalAlignment="Top" Width="100" Click="Base_Click"/>-->
 
     </Grid>
 </Window>
