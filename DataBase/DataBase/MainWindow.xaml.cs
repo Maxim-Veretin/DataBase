@@ -108,32 +108,5 @@ namespace DataBase
             db.Items.RemoveAt(int.Parse(db.SelectedIndex.ToString()));
             command1.ExecuteNonQuery();
         }
-
-        //private void Base_Click(object sender, RoutedEventArgs e)
-        //{
-        //    Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog();
-        //    dlg.ShowDialog();
-
-        //    имя базы данных
-        //    string db1 = dlg.FileName;
-
-        //    SQLiteConnection m_dbConnection;
-        //    m_dbConnection = new SQLiteConnection("Data Source = " + db1 + ";Version = 3");
-
-        //    открытие соединения с базой даных
-        //    m_dbConnection.Open();
-
-        //    string sql = "SELECT * FROM score,name WHERE score.№=name.№ ORDER BY №";
-        //    SQLiteCommand command = new SQLiteCommand(sql, m_dbConnection);
-        //    SQLiteDataReader reader = command.ExecuteReader();
-
-        //    while (reader.Read())
-        //    {
-        //        var data = new DataBase1 { num = int.Parse(reader["№"].ToString()), name = reader["Ф.И.О."].ToString(), phys = int.Parse(reader["Физика"].ToString()), math = int.Parse(reader["Матеша"].ToString()) };
-        //        db.Items.Add(data);
-        //    }
-
-        //    m_dbConnection.Close();
-        //}
     }
 }
